@@ -1,0 +1,122 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.9.7 (Oracle Corporation Java 19.0.1)
+[debug]       Load.loadUnit: plugins took 32.82225ms
+[debug]       Load.loadUnit: defsScala took 0.082625ms
+[debug] [Loading] Scanning directory /Users/erasyl/.sbt/1.0/plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/erasyl/.sbt/1.0/plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 5.9265 ms
+[debug]           Load.resolveProject(global-plugins) took 15.762583ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: /Users/erasyl/.sbt/1.0/plugins, plugins: List(<none>))) took 30.407625ms
+[debug] [Loading] Done in /Users/erasyl/.sbt/1.0/plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 39.244375ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.071167ms
+[debug]     Load.loadUnit(file:/Users/erasyl/.sbt/1.0/plugins/, ...) took 75.002125ms
+[debug]   Load.apply: load took 906.892959ms
+[debug]   Load.apply: resolveProjects took 2.989917ms
+[debug]   Load.apply: finalTransforms took 30.082666ms
+[debug]   Load.apply: config.delegates took 2.394667ms
+[debug]   Load.apply: Def.make(settings)... took 154.623125ms
+[debug]   Load.apply: structureIndex took 40.682125ms
+[debug]   Load.apply: mkStreams took 0.541125ms
+[info] loading global plugins from /Users/erasyl/.sbt/1.0/plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 1649.47975ms
+[debug]           Load.loadUnit: plugins took 6.626083ms
+[debug]           Load.loadUnit: defsScala took 0.002ms
+[debug] [Loading] Scanning directory /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 0.876167 ms
+[debug]               Load.resolveProject(scalaservicepostgress-build) took 0.595833ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id scalaservicepostgress-build, base: /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/project, plugins: List(<none>))) took 1.726833ms
+[debug] [Loading] Done in /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/project, returning: (scalaservicepostgress-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2.616417ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.004334ms
+[debug]         Load.loadUnit(file:/Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/project/, ...) took 9.559417ms
+[debug]       Load.apply: load took 10.078541ms
+[debug]       Load.apply: resolveProjects took 0.046542ms
+[debug]       Load.apply: finalTransforms took 4.404875ms
+[debug]       Load.apply: config.delegates took 0.170667ms
+[debug]       Load.apply: Def.make(settings)... took 53.751625ms
+[debug]       Load.apply: structureIndex took 13.16875ms
+[debug]       Load.apply: mkStreams took 0.001625ms
+[info] loading project definition from /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 206.669833ms
+[debug]     Load.loadUnit: defsScala took 0.001625ms
+[debug] [Loading] Scanning directory /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress
+[debug]       Load.loadUnit: mkEval took 2.414666ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 0.765209 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 1.175875ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress, plugins: List(<none>))) took 2.279708ms
+[debug] [Loading] Done in /Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 59.819542ms
+[debug]     Load.loadUnit: cleanEvalClasses took 1.608292ms
+[debug]   Load.loadUnit(file:/Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/, ...) took 268.4325ms
+[debug] Load.apply: load took 269.121958ms
+[debug] Load.apply: resolveProjects took 0.052167ms
+[debug] Load.apply: finalTransforms took 4.290208ms
+[debug] Load.apply: config.delegates took 0.183208ms
+[debug] Load.apply: Def.make(settings)... took 43.929291ms
+[debug] Load.apply: structureIndex took 14.281292ms
+[debug] Load.apply: mkStreams took 0.001667ms
+[info] set current project to ScalaServicePostgress (in build file:/Users/erasyl/Desktop/programming/Scala/WebService/ScalaServicePostgress/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:///Users/erasyl/.sbt/1.0/server/780f1f5e4d1c85b1d182/sock
+[debug] Writing bsp connection file
+[info] started sbt server
