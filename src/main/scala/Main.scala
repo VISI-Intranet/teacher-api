@@ -1,3 +1,4 @@
+import RabbitMQ.RabbitMQConsumer.ConsumerListenFunction
 import akka.actor.ActorSystem
 import akka.actor.TypedActor.dispatcher
 import akka.http.scaladsl.Http
@@ -6,7 +7,6 @@ import akka.http.scaladsl.server.Directives._
 import org.apache.kafka.clients.producer.KafkaProducer
 import org.json4s.{DefaultFormats, jackson}
 import route._
-
 
 import java.util.Properties
 import scala.io.StdIn;
@@ -21,6 +21,9 @@ object Main extends App {
     TeacherDisciplineRoute.route~
     TeacherStudentRoute.route ~
     DisciplineRoutes.route;
+
+
+  ConsumerListenFunction("DisciplineQueue");
 
   val bindingFuture = Http().bindAndHandle(routes, "localhost", 8081);
 

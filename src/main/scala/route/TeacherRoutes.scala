@@ -1,5 +1,6 @@
 package route
 
+import RabbitMQ.RabbitMQConnection.createConnection
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.ExceptionHandler
@@ -7,9 +8,9 @@ import de.heikoseeberger.akkahttpjson4s.Json4sSupport
 import org.json4s.{DefaultFormats, jackson}
 import repository._
 import model._
+
 import scala.util.{Failure, Success}
 import com.rabbitmq.client.{ConnectionFactory, MessageProperties}
-
 
 import java.nio.charset.StandardCharsets
 
@@ -27,14 +28,7 @@ object TeacherRoutes extends Json4sSupport {
       }
   }
 
-  val factory = new ConnectionFactory()
-  factory.setHost("localhost") // Укажите ваш хост RabbitMQ
-  factory.setUsername("user") // Укажите ваше имя пользователя RabbitMQ
-  factory.setPassword("user") // Укажите ваш пароль RabbitMQ
-
-
-  val connection = factory.newConnection()
-  val channel = connection.createChannel()
+  val (connection, channel) = createConnection()
 
   val queueName = "DisciplineQueue"
 

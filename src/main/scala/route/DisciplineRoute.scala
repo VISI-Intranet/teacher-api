@@ -11,6 +11,8 @@ import model.Discipline
 
 import java.nio.charset.StandardCharsets
 import scala.util.{Failure, Success}
+import RabbitMQ.{RabbitMQConnection, RabbitMQProducer}
+import RabbitMQ.RabbitMQConnection.createConnection
 
 object DisciplineRoutes extends Json4sSupport {
 
@@ -26,14 +28,7 @@ object DisciplineRoutes extends Json4sSupport {
       }
   }
 
-  val factory = new ConnectionFactory()
-  factory.setHost("localhost") // Укажите ваш хост RabbitMQ
-  factory.setUsername("user") // Укажите ваше имя пользователя RabbitMQ
-  factory.setPassword("user") // Укажите ваш пароль RabbitMQ
-
-
-  val connection = factory.newConnection()
-  val channel = connection.createChannel()
+  val (connection, channel) = createConnection()
 
   val queueName = "DisciplineQueue"
 
@@ -57,12 +52,10 @@ object DisciplineRoutes extends Json4sSupport {
                 entity(as[Discipline]) { discipline =>
 
                   onSuccess(DisciplineRepository.addDiscipline(discipline)) { result =>
-                    channel.queueDeclare(queueName, true, false, false, null)
-                    val message =serialization.write(discipline)
-                    channel.basicPublish("DisciplineExchange", "DisciplinePutRoutingKey", MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes(StandardCharsets.UTF_8))
-                    println(s" [x] Sent '$message'")
 
-                    complete(result) // Respond with the result if necessary
+                    RabbitMQProducer.publishMessage("DisciplineQueue","DisciplineExchange" , "DisciplinePutRoutingKey" ,serialization.write(discipline))
+
+                    complete(result)
                   }
                 }
               }
