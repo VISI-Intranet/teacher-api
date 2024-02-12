@@ -19,7 +19,8 @@ object Main extends App {
   val routes = TeacherRoutes.route ~
     StudentRoutes.route ~
     TeacherDisciplineRoute.route~
-    TeacherStudentRoute.route;
+    TeacherStudentRoute.route ~
+    DisciplineRoutes.route;
 
   val bindingFuture = Http().bindAndHandle(routes, "localhost", 8081);
 
