@@ -1,4 +1,4 @@
-import RabbitMQ.RabbitMQConsumer.ConsumerListenFunction
+
 import akka.actor.ActorSystem
 import akka.actor.TypedActor.dispatcher
 import akka.http.scaladsl.Http
@@ -23,7 +23,7 @@ object Main extends App {
     DisciplineRoutes.route;
 
 
-  ConsumerListenFunction("DisciplineQueue");
+  RabbitMQConsumer.ConsumerListenFunction("DisciplineQueue");
 
   val bindingFuture = Http().bindAndHandle(routes, "localhost", 8081);
 

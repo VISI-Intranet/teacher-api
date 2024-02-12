@@ -7,18 +7,14 @@
     <list default="true" id="c79ac89e-9a0b-4537-8105-ec846c8d7090" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/RabbitMQ/RabbitMQConnection.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RabbitMQ/RabbitMQConnection.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/RabbitMQ/RabbitMQConsumer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RabbitMQ/RabbitMQConsumer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/RabbitMQ/RabbitMQProducer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RabbitMQ/RabbitMQProducer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/route/DisciplineRoute.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/route/DisciplineRoute.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/route/TeacherRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/route/TeacherRoutes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Main$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/route/DisciplineRoutes$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/route/DisciplineRoutes$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/route/DisciplineRoutes$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/route/DisciplineRoutes$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/route/DisciplineRoutes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/route/DisciplineRoutes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/route/TeacherRoutes$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/route/TeacherRoutes$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/route/TeacherRoutes$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/route/TeacherRoutes$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/route/TeacherRoutes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/route/TeacherRoutes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RabbitMQ/RabbitMQConsumer$$anon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RabbitMQ/RabbitMQConsumer$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RabbitMQ/RabbitMQConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RabbitMQ/RabbitMQProducer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RabbitMQ/RabbitMQProducer$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RabbitMQ/RabbitMQProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RabbitMQ/RabbitMQProducer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707540809866</updated>
       <workItem from="1707540810972" duration="100000" />
-      <workItem from="1707749522725" duration="4135000" />
+      <workItem from="1707749522725" duration="9274000" />
     </task>
     <servers />
   </component>
