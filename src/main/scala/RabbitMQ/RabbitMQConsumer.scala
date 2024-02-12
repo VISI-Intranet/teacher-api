@@ -1,0 +1,5 @@
+package RabbitMQ
+
+object RabbitMQConsumer {
+
+}

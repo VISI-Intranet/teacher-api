@@ -19,7 +19,9 @@ lazy val root = (project in file("."))
       "org.apache.spark" %% "spark-core" % "3.2.0",
       "org.apache.spark" %% "spark-streaming" % "3.2.0",
       "org.apache.spark" %% "spark-sql" % "3.2.0",
-      "org.apache.spark" %% "spark-streaming-kafka-0-10" % "3.2.0"
+      "org.apache.spark" %% "spark-streaming-kafka-0-10" % "3.2.0" ,
+      "com.rabbitmq" % "amqp-client" % "5.14.0",
+      "com.lightbend.akka" %% "akka-stream-alpakka-amqp" % "3.0.4"
 
 
     )

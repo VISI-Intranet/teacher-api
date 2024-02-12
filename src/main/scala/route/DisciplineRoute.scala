@@ -3,6 +3,7 @@ package route
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.ExceptionHandler
+import com.rabbitmq.client.{ConnectionFactory, MessageProperties}
 import de.heikoseeberger.akkahttpjson4s.Json4sSupport
 import org.json4s.{DefaultFormats, jackson}
 import repository.{DisciplineRepository, TeacherRepository}
@@ -25,7 +26,16 @@ object DisciplineRoutes extends Json4sSupport {
       }
   }
 
+  val factory = new ConnectionFactory()
+  factory.setHost("localhost") // Укажите ваш хост RabbitMQ
+  factory.setUsername("user") // Укажите ваше имя пользователя RabbitMQ
+  factory.setPassword("user") // Укажите ваш пароль RabbitMQ
 
+
+  val connection = factory.newConnection()
+  val channel = connection.createChannel()
+
+  val queueName = "DisciplineQueue"
 
   val route =
     handleExceptions(exceptionHandler) {
@@ -45,8 +55,16 @@ object DisciplineRoutes extends Json4sSupport {
               },
               post {
                 entity(as[Discipline]) { discipline =>
-                    complete(DisciplineRepository.addDiscipline(discipline)) // Respond with the result if necessary
+
+                  onSuccess(DisciplineRepository.addDiscipline(discipline)) { result =>
+                    channel.queueDeclare(queueName, true, false, false, null)
+                    val message =serialization.write(discipline)
+                    channel.basicPublish("DisciplineExchange", "DisciplinePutRoutingKey", MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes(StandardCharsets.UTF_8))
+                    println(s" [x] Sent '$message'")
+
+                    complete(result) // Respond with the result if necessary
                   }
+                }
               }
             )
           },
@@ -59,16 +77,28 @@ object DisciplineRoutes extends Json4sSupport {
               put {
                 entity(as[Discipline]) { updatedDiscipline =>
 
-                                    onComplete(DisciplineRepository.updateDiscipline(idAsInt, updatedDiscipline)) {
-                                      case Success(rowsAffected) =>
-                                        if (rowsAffected > 0) {
-                                          complete(s"Rows affected: $rowsAffected")
-                                        } else {
-                                          complete(404, "Discipline not found")
-                                        }
-                                      case Failure(ex) =>
-                                        complete(500, s"Update failed: ${ex.getMessage}")
-                                    }
+                  onComplete(DisciplineRepository.updateDiscipline(idAsInt, updatedDiscipline)) {
+                    case Success(result) =>
+                      channel.queueDeclare("DisciplineQueue", true, false, false, null)
+                      val message = serialization.write(updatedDiscipline)
+                      channel.basicPublish("DisciplineExchange", "DisciplineRoutingKey", MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes(StandardCharsets.UTF_8))
+                      println(s" [x] Sent '$message'")
+                      complete("Update successful") // Измените на ваш ответ при необходимости
+
+                    case Failure(ex) =>
+                      println(s"Update failed: ${ex.getMessage}")
+                      complete(StatusCodes.InternalServerError, s"Update failed: ${ex.getMessage}")
+                  }
+                  //                  onComplete(DisciplineRepository.updateDiscipline(idAsInt, updatedDiscipline)) {
+                  //                    case Success(rowsAffected) =>
+                  //                      if (rowsAffected > 0) {
+                  //                        complete(s"Rows affected: $rowsAffected")
+                  //                      } else {
+                  //                        complete(404, "Discipline not found")
+                  //                      }
+                  //                    case Failure(ex) =>
+                  //                      complete(500, s"Update failed: ${ex.getMessage}")
+                  //                  }
                 }
               },
               delete {
